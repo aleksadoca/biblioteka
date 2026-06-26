@@ -1,0 +1,88 @@
+# =============================================
+# Biblioteka - Apache konfiguracija
+# =============================================
+
+# Uključivanje mod_rewrite
+RewriteEngine On
+
+# Ako zahtevani fajl ne postoji
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Ako zahtevani direktorijum ne postoji
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Sve zahteve usmeriti na index.php
+RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+
+# =============================================
+# Sigurnosna pravila
+# =============================================
+
+# Onemogućavanje pristupa konfiguracionim fajlovima
+<FilesMatch "\.(env|json|yml|yaml|md|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Blokiranje starih instalacionih i debug skripti ako ostanu na hostingu
+<FilesMatch "^(setup|import_db|fix_db|test)\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Onemogućavanje pristupa .git direktorijumu
+<IfModule mod_rewrite.c>
+    RewriteRule ^\.git - [F,L]
+</IfModule>
+
+# =============================================
+# PHP podešavanja
+# =============================================
+
+# Prikazivanje grešaka (isključiti na produkciji)
+php_flag display_errors Off
+php_flag display_startup_errors Off
+
+# Sigurnosna podešavanja
+php_flag expose_php Off
+
+# Maksimalno vreme izvršavanja
+php_value max_execution_time 30
+
+# Maksimalna količina memorije
+php_value memory_limit 128M
+
+# Maksimalna veličina fajla za upload
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+
+# =============================================
+# Keširanje statičkih resursa
+# =============================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # CSS i JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    
+    # Slike
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    
+    # Fontovi
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# =============================================
+# Gzip kompresija
+# =============================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/json
+</IfModule>

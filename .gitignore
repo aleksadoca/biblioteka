@@ -1,0 +1,40 @@
+# =====================================================
+# Biblioteka - Git ignorisane fajlovi
+# =====================================================
+
+# Environment fajlovi (sadrže osetljive podatke)
+.env
+.env.local
+.env.production
+
+# Sesije
+/sessions/*
+
+# Log fajlovi
+/logs/*
+*.log
+
+# Upload fajlovi (opciono)
+/uploads/*
+
+# IDE fajlovi
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS fajlovi
+.DS_Store
+Thumbs.db
+
+# Vendor (ako se koristi Composer)
+/vendor/
+
+# Node modules (ako se koristi npm)
+/node_modules/
+
+# Backup i arhiva fajlovi
+*.bak
+*.backup
+*.old
+*.zip

@@ -1,0 +1,51 @@
+# =============================================
+# Biblioteka - Glavna .htaccess konfiguracija
+# Direktno usmerava zahteve na root index.php
+# =============================================
+
+# Uključivanje mod_rewrite
+RewriteEngine On
+
+# Ako zahtevani fajl ne postoji
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Ako zahtevani direktorijum ne postoji
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Sve zahteve usmeriti na root index.php
+RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+
+# =============================================
+# Sigurnosna pravila
+# =============================================
+
+# Onemogućavanje pristupa konfiguracionim fajlovima
+<FilesMatch "\.(env|json|yml|yaml|md|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Blokiranje starih instalacionih i debug skripti ako ostanu na hostingu
+<FilesMatch "^(setup|import_db|fix_db|test)\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Onemogućavanje pristupa .git direktorijumu
+<IfModule mod_rewrite.c>
+    RewriteRule ^\.git - [F,L]
+</IfModule>
+
+# Onemogućavanje listanja direktorijuma
+Options -Indexes
+
+# =============================================
+# PHP podešavanja
+# =============================================
+
+# Prikazivanje grešaka (isključiti na produkciji)
+php_flag display_errors Off
+php_flag display_startup_errors Off
+
+# Sigurnosna podešavanja
+php_flag expose_php Off

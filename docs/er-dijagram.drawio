@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-23T00:00:00.000Z" agent="5.0" version="21.0.0" type="device">
+  <diagram id="er-diagram" name="ER Dijagram - Biblioteka">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- USERS Entity -->
+        <mxCell id="users_entity" value="USERS" style="shape=ext;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="200" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="users_attrs" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="170" y="260" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="users_id" value="id (PK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="users_username" value="username" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="users_password" value="password" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="users_email" value="email" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="users_fullname" value="full_name" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="users_role" value="role" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="500" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="users_created" value="created_at" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="80" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- USERS to attributes connections -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="users_entity" target="users_id" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="users_entity" target="users_username" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="users_entity" target="users_password" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="users_entity" target="users_email" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="users_entity" target="users_fullname" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="users_entity" target="users_role" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="users_entity" target="users_created" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- BOOKS Entity -->
+        <mxCell id="books_entity" value="BOOKS" style="shape=ext;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="500" y="200" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_id" value="id (PK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="300" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_title" value="title" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="340" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_author" value="author" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="380" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_isbn" value="isbn" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="420" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_genre" value="genre" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="460" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_year" value="year" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="500" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_available" value="available_copies" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="300" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_total" value="total_copies" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="340" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_desc" value="description" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="380" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="books_cover" value="cover_image" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="420" width="100" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- BOOKS to attributes connections -->
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_id" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_title" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_author" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_isbn" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_genre" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_year" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_available" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_total" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_desc" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="books_entity" target="books_cover" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- RENTALS Entity (Relationship) -->
+        <mxCell id="rentals_entity" value="RENTALS" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=16;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="380" y="50" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="rentals_id" value="id (PK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="100" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="rentals_bookid" value="book_id (FK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="140" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="rentals_userid" value="user_id (FK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="180" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="rentals_rentaldate" value="rental_date" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="220" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="rentals_duedate" value="due_date" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="260" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="rentals_returndate" value="return_date" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="300" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="rentals_status" value="status" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="340" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="rentals_latefee" value="late_fee" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="380" width="80" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- RENTALS to attributes connections -->
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="rentals_entity" target="rentals_id" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="rentals_entity" target="rentals_bookid" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e22" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="rentals_entity" target="rentals_userid" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e23" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="rentals_entity" target="rentals_rentaldate" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e24" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="rentals_entity" target="rentals_duedate" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e25" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="rentals_entity" target="rentals_returndate" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e26" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="rentals_entity" target="rentals_status" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e27" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="rentals_entity" target="rentals_latefee" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Relationships -->
+        <!-- USERS to RENTALS (1:N) -->
+        <mxCell id="rel_user_rentals" value="1:N" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#9673a6;" edge="1" source="users_entity" target="rentals_entity" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="180"/>
+              <mxPoint x="480" y="180"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_user_label" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="165" width="20" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_user_label2" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="165" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- BOOKS to RENTALS (1:N) -->
+        <mxCell id="rel_book_rentals" value="1:N" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#82b366;" edge="1" source="books_entity" target="rentals_entity" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="180"/>
+              <mxPoint x="480" y="180"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_book_label" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="165" width="20" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_book_label2" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="165" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="620" width="300" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_title" value="LEGENDA" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="630" width="140" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_entity" value="" style="shape=ext;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="670" width="40" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_entity_text" value="Entitet" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="170" y="665" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_relation" value="" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="120" y="700" width="40" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_relation_text" value="Relacija" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="170" y="700" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_attr" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="120" y="740" width="40" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_attr_text" value="Atribut" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="170" y="735" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_fk" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="250" y="670" width="40" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_fk_text" value="Strani ključ" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="300" y="665" width="90" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Cardinality explanation -->
+        <mxCell id="card_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="620" width="300" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="card_title" value="KARDINALNOSTI" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="630" width="140" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="card_1n" value="1:N = Jedan ka više" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="520" y="670" width="200" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="card_desc1" value="Jedan korisnik može imati više iznajmljivanja" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="520" y="700" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="card_desc2" value="Jedna knjiga može biti iznajmljena više puta" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="520" y="720" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="card_desc3" value="RENTALS je asocijativna entiteta između USERS i BOOKS" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="520" y="740" width="280" height="20" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
