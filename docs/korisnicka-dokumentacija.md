@@ -2,17 +2,13 @@
 
 ## 1. Pregled aplikacije
 
-Web aplikacija "Biblioteka" je sistem za upravljanje bibliotekom koji omogućava:
-- Pregled i pretragu knjiga
-- Iznajmljivanje i vraćanje knjiga
-- Upravljanje korisnicima
-- Praćenje statistika
+Aplikacija Biblioteka služi za evidenciju knjiga, korisnika i iznajmljivanja. Korisnik može da pregleda katalog i iznajmi knjigu, a zaposleni održava podatke i prati statistiku.
 
 ## 2. Pristupni podaci
 
 ### Web sajt
 - **URL:** https://zadatak-fakultet.page.gd/
-- **Namena domena:** test i prikaz projekta profesoru
+- **Namena domena:** test i prikaz projekta
 - **Hosting:** InfinityFree
 
 ### Test nalozi
@@ -148,12 +144,12 @@ O: Trenutno nema automatskog produženja. Vratite knjigu i ponovo je iznajmite.
 
 ## 5. Screenshotovi
 
-Screenshotovi se dodaju nakon postavljanja aplikacije na hosting. Potrebno je sačuvati slike sledećih stranica:
-1. Početna stranica
-2. Stranica za prijavu
-3. Lista knjiga sa filterima
-4. Detalji knjige
-5. Forma za iznajmljivanje
-6. Lista iznajmljivanja
-7. Statistike (zaposleni)
-8. Lista korisnika (zaposleni)
+Ključni ekrani aplikacije su sačuvani u folderu `docs/screenshots/` i uključeni su u Word dokumentaciju:
+
+1. `01-pocetna.png` - početna stranica
+2. `02-prijava.png` - forma za prijavu
+3. `03-lista-knjiga.png` - lista knjiga sa filterima
+4. `04-detalj-knjige.png` - detalj izabrane knjige
+5. `05-iznajmljivanja.png` - lista iznajmljivanja
+6. `06-korisnici.png` - upravljanje korisnicima
+7. `07-statistika.png` - statistika biblioteke

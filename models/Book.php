@@ -1,7 +1,6 @@
 <?php
 /**
  * Model za rad sa knjigama
- * Omogućava CRUD operacije nad tabelom books
  */
 
 class Book {

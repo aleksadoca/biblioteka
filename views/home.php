@@ -21,7 +21,7 @@ $totalUsers = $userModel->count();
                     <i class="bi bi-book"></i> Dobrodošli u Biblioteku
                 </h1>
                 <p class="lead opacity-90 mb-4" style="max-width: 600px; font-size: 1.2rem;">
-                    Vaš digitalni sistem za upravljanje bibliotekom. Pregledajte knjige, iznajmite ih i pratite vašu istoriju čitanja.
+                    Aplikacija za evidenciju knjiga i iznajmljivanja. Pregledajte katalog, iznajmite knjigu i pratite istoriju.
                 </p>
                 <div class="d-flex gap-3 flex-wrap">
                     <a href="/index.php?page=books" class="btn btn-light btn-lg px-4">
@@ -175,7 +175,7 @@ $recentBooks = array_slice($recentBooks, 0, 4);
                 <div class="row">
                     <div class="col-md-4">
                         <h6><i class="bi bi-clock"></i> Rokovi</h6>
-                        <p class="small text-muted">Knjige se iznajmljuju na 14 dana. Moguće je produžiti rok ako nema rezervacija.</p>
+                        <p class="small text-muted">Podrazumevani rok je 14 dana, a može se izabrati i do 30 dana pri iznajmljivanju.</p>
                     </div>
                     <div class="col-md-4">
                         <h6><i class="bi bi-cash"></i> Zakasnina</h6>

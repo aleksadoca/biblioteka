@@ -1,25 +1,28 @@
-# 📚 Biblioteka - Web Aplikacija za Upravljanje Bibliotekom
+# Biblioteka
 
-PHP web aplikacija za upravljanje bibliotekom, dizajnirana za hosting na InfinityFree platformi.
+Biblioteka je PHP aplikacija za evidenciju knjiga, korisnika i iznajmljivanja. Projekat je napravljen bez framework-a, sa jasnom MVC podelom na kontrolere, modele i prikaze.
 
-## 🎯 Opis Projekta
+Demo: `https://zadatak-fakultet.page.gd/`
 
-Aplikacija omogućava:
+## Šta aplikacija radi
 
-- **Autentifikaciju** - Prijava/odjava korisnika sa dva nivoa pristupa
-- **Upravljanje knjigama** - CRUD operacije sa filterima i pretragom
-- **Iznajmljivanje** - Izdavanje i vraćanje knjiga sa automatskim računanjem zakasnine
-- **Upravljanje korisnicima** - Registracija, profil, istorija
-- **Statistike** - Izveštaji o najčitanije knjige i najaktivniji korisnici
+- vodi katalog knjiga sa autorom, žanrom, godinom, ISBN brojem i brojem primeraka
+- omogućava prijavu, registraciju i dve uloge: korisnik i zaposleni
+- korisnik može da pregleda knjige, iznajmi dostupnu knjigu i vidi svoju istoriju
+- zaposleni može da dodaje i menja knjige, vraća knjige, pregleda korisnike i statistiku
+- sistem računa zakasninu za knjige koje nisu vraćene na vreme
 
-## 🏗️ Tehnologije
+## Tehnologije
 
-- **Serverski deo:** PHP 7.4+ (čist PHP, bez framework-a)
-- **Baza podataka:** MySQL 5.7+ / MariaDB 10.2+
-- **Korisnički interfejs:** HTML5, CSS3, Bootstrap 5, JavaScript
-- **Arhitektura:** MVC šablon (modeli, prikazi i kontroleri)
+| Deo sistema | Tehnologija |
+| --- | --- |
+| Backend | PHP 7.4+ |
+| Baza | MySQL 5.7+ / MariaDB 10.2+ |
+| Frontend | HTML, CSS, Bootstrap 5, JavaScript |
+| Arhitektura | MVC bez dodatnog framework-a |
+| Hosting | InfinityFree |
 
-## 📁 Struktura Projekta
+## Struktura projekta
 
 ```
 biblioteka/
@@ -58,6 +61,10 @@ biblioteka/
 │   │   └── edit.php         # Izmena profila
 │   └── statistics/
 │       └── index.php        # Statistike biblioteke
+├── css/
+│   └── style.css            # Prilagođeni stilovi
+├── js/
+│   └── app.js               # Prilagođeni JavaScript
 ├── public/
 │   ├── index.php            # Glavni ulazni fajl aplikacije
 │   ├── .htaccess            # Apache konfiguracija
@@ -73,36 +80,32 @@ biblioteka/
 │   ├── seed.sql             # Test podaci
 │   └── backup.sql           # Kompletni SQL bekap
 └── docs/
+    ├── Biblioteka-dokumentacija.docx # Objedinjena dokumentacija za predaju
     ├── er-dijagram.drawio          # ER dijagram (Chen notacija)
     ├── dokumentacija-baze.md       # Dokumentacija baze podataka
     ├── infinityfree-postavka.md    # Uputstvo za InfinityFree hosting
     └── korisnicka-dokumentacija.md # Korisničko uputstvo
 ```
 
-## 🚀 Instalacija
+## Instalacija
 
-### Lokalno razvojno okruženje
+Lokalno pokretanje:
 
-1. **XAMPP/WAMP/MAMP** - Instalirajte lokalni server
-2. **Kopirajte fajlove** u `htdocs` direktorijum
-3. **Kreirajte bazu podataka** u phpMyAdmin
-4. **Uvezite strukturu** iz `database/schema.sql`
-5. **Uvezite test podatke** iz `database/seed.sql`
-6. **Pristupite aplikaciji** na `http://localhost/biblioteka/public/`
+1. Kopirati projekat u `htdocs` direktorijum XAMPP/WAMP/MAMP okruženja.
+2. U phpMyAdmin-u napraviti bazu za aplikaciju.
+3. Importovati `database/schema.sql`, zatim `database/seed.sql`.
+4. Otvoriti aplikaciju kroz lokalni server.
 
-### InfinityFree hosting
+Postavljanje na hosting:
 
-1. **Registrujte nalog** na [InfinityFree](https://infinityfree.net/)
-2. **Kreirajte MySQL bazu** u kontrolnom panelu
-3. **Ažurirajte** `config/database.php` sa vašim podacima
-4. **Upload-ujte fajlove** preko File Manager-a
-5. **Pristupite sajtu** na vašem domenu
+1. Na InfinityFree panelu napraviti MySQL bazu.
+2. Importovati `database/backup.sql` kroz phpMyAdmin.
+3. U `config/database.php` uneti podatke za konekciju.
+4. Uploadovati fajlove u `htdocs/`.
 
-## ⚙️ Konfiguracija
+## Konfiguracija baze
 
-### Baza podataka
-
-Uredite `config/database.php` na hostingu:
+`config/database.php` koristi vrednosti iz environment promenljivih ako postoje, a u suprotnom primer vrednosti za hosting:
 
 ```php
 define('DB_HOST', getenv('DB_HOST') ?: 'sqlXXX.infinityfree.com');
@@ -112,145 +115,96 @@ define('DB_USER', getenv('DB_USER') ?: 'if0_XXXXXXX');
 define('DB_PASS', getenv('DB_PASS') ?: 'CHANGE_ME');
 ```
 
-Zamenite prikazane primer vrednosti stvarnim podacima iz InfinityFree kontrolnog panela. Ne objavljujte stvarnu lozinku u repozitorijumu.
+Stvarna lozinka baze ne ide u repozitorijum.
 
-## 👥 Korisničke Uloge
+## Uloge
 
-### Zaposleni
+| Uloga | Mogućnosti |
+| --- | --- |
+| Korisnik | pregled knjiga, iznajmljivanje, istorija, profil |
+| Zaposleni | knjige, korisnici, vraćanje knjiga, statistika |
 
-- Puni pristup svim funkcionalnostima
-- Dodavanje, izmena i brisanje knjiga
-- Pregled svih korisnika
-- Vraćanje knjiga
-- Pregled statistika
+## Baza podataka
 
-### Korisnik
+Glavne tabele:
 
-- Pregled knjiga
-- Iznajmljivanje knjiga
-- Pregled sopstvene istorije
-- Izmena profila
+- `users` - nalozi i uloge korisnika
+- `books` - knjige i broj primeraka
+- `rentals` - iznajmljivanja, rokovi, status i zakasnina
 
-## 📊 Baza Podataka
+Relacije:
 
-### Tabele
+- `rentals.user_id` → `users.id`
+- `rentals.book_id` → `books.id`
 
-- **users** - Korisnici sistema
-- **books** - Knjige u biblioteci
-- **rentals** - Iznajmljivanja
+Baza je opisana detaljnije u [docs/dokumentacija-baze.md](docs/dokumentacija-baze.md).
 
-### Relacije
+## Sigurnost
 
-- `rentals.book_id` → `books.id` (N:1)
-- `rentals.user_id` → `users.id` (N:1)
+- lozinke se proveravaju preko `password_hash()` i `password_verify()`
+- SQL upiti koriste prepared statements
+- korisnički unos se pri ispisu obrađuje kroz `htmlspecialchars()`
+- uloge se proveravaju pre pristupa stranicama za zaposlene
 
-## 🔐 Sigurnost
+## Test nalozi
 
-- **Hashiranje lozinki** - `password_hash()` / `password_verify()`
-- **Zaštita od SQL injection napada** - prepared statements za upite ka bazi
-- **XSS zaštita** - `htmlspecialchars()` za ispis korisničkih podataka
-- **CSRF zaštita** - Token za forme
-- **Sesije** - Sigurno upravljanje sesijama
+Lozinka za test naloge je `password`.
 
-## 📱 Prilagodljiv dizajn
+| Korisničko ime | Uloga | Ime |
+| --- | --- | --- |
+| admin | Zaposleni | Marko Marković |
+| zaposleni1 | Zaposleni | Jovan Jovanović |
+| zaposleni2 | Zaposleni | Ana Anić |
+| petar | Korisnik | Petrović Petar |
+| mika | Korisnik | Mikić Mika |
+| zika | Korisnik | Žikić Žika |
+| ana | Korisnik | Anić Ana |
+| jelena | Korisnik | Jelenić Jelena |
 
-Aplikacija je optimizovana za:
+## Dokumentacija
 
-- Desktop računare
-- Tablete
-- Mobilne telefone
+- [Word dokumentacija](docs/Biblioteka-dokumentacija.docx) - objedinjeni opis aplikacije, baze, relacija, ER dijagrama i ekrana
+- [Dokumentacija baze](docs/dokumentacija-baze.md) - tabele, atributi, relacije, indeksi i normalizacija
+- [Korisničko uputstvo](docs/korisnicka-dokumentacija.md) - tokovi korišćenja za korisnika i zaposlenog
+- [InfinityFree postavka](docs/infinityfree-postavka.md) - postavljanje aplikacije i import baze
+- [ER dijagram](docs/er-dijagram.drawio) - originalni draw.io fajl
 
-## 🧪 Test Podaci
+## Ekrani aplikacije
 
-### Korisnici (lozinka: `password`)
+### Početna stranica
 
-| Korisničko ime | Uloga     | Ime             |
-| -------------- | --------- | --------------- |
-| admin          | Zaposleni | Marko Marković  |
-| zaposleni1     | Zaposleni | Jovan Jovanović |
-| petar          | Korisnik  | Petrović Petar  |
-| mika           | Korisnik  | Mikić Mika      |
+![Početna stranica](docs/screenshots/01-pocetna.png)
 
-## 📄 Licenca
+### Prijava
 
-Ovaj projekat je kreiran u obrazovne svrhe.
+![Prijava](docs/screenshots/02-prijava.png)
 
-## 👨‍ Razvoj
+### Lista knjiga
 
-### Pokretanje razvoja
+![Lista knjiga](docs/screenshots/03-lista-knjiga.png)
 
-1. Klonirajte repozitorijum
-2. Pokrenite lokalni server
-3. Kreirajte bazu podataka
-4. Pristupite aplikaciji
+### Detalj knjige
 
-### Struktura koda
+![Detalj knjige](docs/screenshots/04-detalj-knjige.png)
 
-- **MVC šablon** - `index.php` i `public/index.php` rade kao ulazne tačke, kontroleri biraju akcije, modeli rade sa bazom, a prikazi ispisuju HTML.
-- **Helper funkcije** - Zajedničke funkcije za sesije, validaciju, prikaz i formatiranje nalaze se u `helpers/`.
-- **Ulazna tačka aplikacije** - Zahtevi se rutiraju preko `page` parametra, npr. `index.php?page=books`.
+### Iznajmljivanja
 
-## 📚 Dokumentacija
+![Iznajmljivanja](docs/screenshots/05-iznajmljivanja.png)
 
-- [InfinityFree postavka](docs/infinityfree-postavka.md) - Koraci za nalog, bazu, phpMyAdmin, upload fajlova, konfiguraciju i listu potrebnih screenshotova
-- [ER Dijagram](docs/er-dijagram.drawio) - Chen notacija u draw.io formatu
-- [Dokumentacija baze](docs/dokumentacija-baze.md) - Model, relacije, normalizacija 3NF
-- [Korisničko uputstvo](docs/korisnicka-dokumentacija.md) - Uputstvo za korišćenje
+### Korisnici
 
-## 🔄 GitHub predaja
+![Korisnici](docs/screenshots/06-korisnici.png)
 
-Demo domen za test i prikaz: `https://zadatak-fakultet.page.gd/`.
+### Statistika
 
-U predaji profesoru priložiti stvarni GitHub link repozitorijuma.
+![Statistika](docs/screenshots/07-statistika.png)
 
-Preporučena struktura commit-ova za GitHub repozitorijum:
+## Predaja
 
-1. **Inicijalni commit** - Osnovna struktura projekta
-   - Kreiranje folder strukture
-   - Konfiguracija baze podataka
-   - Helper funkcije
+Za predaju su relevantni:
 
-2. **Modeli** - Implementacija modela
-   - User model
-   - Book model
-   - Rental model
-
-3. **Autentifikacija** - Sistem za prijavu/odjavu
-   - Login stranica
-   - Registracija stranica
-   - Sesije i autorizacija
-
-4. **Books modul** - CRUD operacije za knjige
-   - Lista knjiga sa filterima
-   - Dodavanje/izmena knjiga
-   - Detalji knjige
-
-5. **Rentals modul** - Sistem iznajmljivanja
-   - Iznajmljivanje knjiga
-   - Vraćanje knjiga
-   - Zakasnina
-
-6. **Users modul** - Upravljanje korisnicima
-   - Lista korisnika
-   - Profil korisnika
-   - Izmena profila
-
-7. **Statistika** - Izveštaji
-   - Statistike po žanru
-   - Najaktivniji korisnici
-   - Najčitanije knjige
-
-8. **Korisnički interfejs** - CSS i JavaScript
-   - Bootstrap raspored
-   - Prilagođeni stilovi
-   - Interaktivnost
-
-9. **Dokumentacija** - Završna dokumentacija
-   - ER dijagram
-   - Dokumentacija baze
-   - Korisničko uputstvo
-   - SQL bekap
-
----
-
-**Napomena:** Projekat je namenjen za školski zadatak. Pre javne produkcione upotrebe potrebno je dodatno proveriti hosting podešavanja, backup politiku i zaštitu administratorskih naloga.
+- kompletan kod aplikacije
+- SQL fajlovi iz `database/`
+- Word dokumentacija iz `docs/Biblioteka-dokumentacija.docx`
+- ER dijagram iz `docs/er-dijagram.drawio`
+- screenshotovi iz `docs/screenshots/`

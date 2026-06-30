@@ -1,7 +1,6 @@
 <?php
 /**
  * Model za rad sa korisnicima
- * Omogućava CRUD operacije nad tabelom users
  */
 
 class User {

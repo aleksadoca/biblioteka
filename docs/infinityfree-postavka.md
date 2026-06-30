@@ -2,11 +2,11 @@
 
 Ovaj dokument opisuje kako se aplikacija Biblioteka postavlja na InfinityFree hosting.
 
-Demo domen za test i prikaz profesoru je:
+Demo domen za test i prikaz projekta je:
 
 `https://zadatak-fakultet.page.gd/`
 
-Domen služi za proveru školskog projekta. Privatni hosting, FTP i phpMyAdmin podaci ne šalju se profesoru i ne objavljuju se u repozitorijumu.
+Domen služi za proveru školskog projekta. Privatni hosting, FTP i phpMyAdmin podaci ne objavljuju se u repozitorijumu.
 
 ## 1. Kreiranje InfinityFree naloga
 
@@ -16,16 +16,12 @@ Domen služi za proveru školskog projekta. Privatni hosting, FTP i phpMyAdmin p
 4. Potvrditi email adresu.
 5. Otvoriti InfinityFree klijentski panel.
 
-Screenshot za dokumentaciju: `docs/screenshots/01-kreiranje-naloga.png`.
-
 ## 2. Kreiranje hosting naloga
 
 1. U klijentskom panelu kliknuti na **Create Account**.
 2. Izabrati besplatan subdomen ili povezati sopstveni domen.
 3. Sačekati da status hosting naloga bude aktivan.
 4. Otvoriti kontrolni panel za taj hosting nalog.
-
-Screenshot za dokumentaciju: `docs/screenshots/02-hosting-nalog.png`.
 
 ## 3. Postavka MySQL baze
 
@@ -38,8 +34,6 @@ Screenshot za dokumentaciju: `docs/screenshots/02-hosting-nalog.png`.
    - lozinku baze
 4. Ovi podaci su privatni i ne postavljaju se na GitHub.
 
-Screenshot za dokumentaciju: `docs/screenshots/03-mysql-baza.png`.
-
 ## 4. Import baze kroz phpMyAdmin
 
 1. Iz InfinityFree kontrolnog panela otvoriti **phpMyAdmin**.
@@ -49,8 +43,6 @@ Screenshot za dokumentaciju: `docs/screenshots/03-mysql-baza.png`.
 5. Kliknuti na **Go** i proveriti da postoje tabele `users`, `books` i `rentals`.
 
 Druga mogućnost je da se prvo uveze `database/schema.sql`, pa zatim `database/seed.sql`.
-
-Screenshot za dokumentaciju: `docs/screenshots/04-phpmyadmin-import.png`.
 
 ## 5. Konfiguracija konekcije
 
@@ -66,8 +58,6 @@ define('DB_PASS', getenv('DB_PASS') ?: 'CHANGE_ME');
 
 Stvarna lozinka se unosi samo na hostingu i ne objavljuje se u repozitorijumu.
 
-Screenshot za dokumentaciju: `docs/screenshots/05-konfiguracija-konekcije.png`.
-
 ## 6. Upload fajlova
 
 1. Otvoriti **File Manager** ili se povezati preko FTP-a.
@@ -77,8 +67,6 @@ Screenshot za dokumentaciju: `docs/screenshots/05-konfiguracija-konekcije.png`.
 5. Ne uploadovati spoljašnji folder tako da putanja bude `htdocs/biblioteka/index.php`, jer tada domen ne bi radio direktno.
 6. Demo domen mora da otvara aplikaciju direktno na `https://zadatak-fakultet.page.gd/`, bez `/public` u URL-u.
 7. Baza se postavlja kroz phpMyAdmin import fajla `database/backup.sql`; posebne instalacione PHP skripte nisu deo predajne verzije.
-
-Screenshot za dokumentaciju: `docs/screenshots/06-upload-fajlova.png`.
 
 ## 7. Provera rada aplikacije
 
@@ -94,9 +82,9 @@ Screenshot za dokumentaciju: `docs/screenshots/06-upload-fajlova.png`.
 6. Proveriti da običan korisnik ne može da pristupi stranicama za zaposlene.
 7. Proveriti da ne postoje javno dostupne pomoćne skripte kao `setup.php`, `import_db.php`, `fix_db.php` ili `test.php`.
 
-Screenshot za dokumentaciju: `docs/screenshots/07-provera-aplikacije.png`.
+Ekrani same aplikacije nalaze se u `docs/screenshots/` i prikazani su u `README.md` i Word dokumentaciji.
 
-## 8. Checklist pre slanja profesoru
+## 8. Checklist pre predaje projekta
 
 - Demo domen otvara aplikaciju direktno: `https://zadatak-fakultet.page.gd/`, bez `/public` u URL-u.
 - `config/database.php` na hostingu ima stvarne podatke baze, ali repozitorijum ima samo primer vrednosti.

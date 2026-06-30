@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h5 class="text-white mb-3"><i class="bi bi-book"></i> Biblioteka</h5>
-                    <p class="text-light opacity-75">Moderan sistem za upravljanje bibliotekom. Čuvajmo znanje zajedno.</p>
+                    <p class="text-light opacity-75">Školski projekat za evidenciju knjiga, korisnika i iznajmljivanja.</p>
                 </div>
                 <div class="col-md-3">
                     <h6 class="text-white mb-3">Linkovi</h6>
@@ -27,7 +27,7 @@
             </div>
             <hr class="border-secondary my-4">
             <div class="text-center">
-                <p class="text-light opacity-50 mb-0">&copy; <?= date('Y') ?> Biblioteka. Sva prava zadržana.</p>
+                <p class="text-light opacity-50 mb-0">Biblioteka &mdash; <?= date('Y') ?></p>
             </div>
         </div>
     </footer>

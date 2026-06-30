@@ -1,7 +1,6 @@
 <?php
 /**
  * Model za rad sa iznajmljivanjima
- * Omogućava CRUD operacije nad tabelom rentals
  */
 
 class Rental {

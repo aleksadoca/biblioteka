@@ -81,27 +81,28 @@ ER dijagram je kreiran u Chen notaciji pomoću draw.io alata. Fajl se nalazi u: 
 ## 4. Normalizacija (do 3NF)
 
 ### Prvi normalni oblik (1NF)
-✅ **Svi atributi su atomarni** - svaka ćelija sadrži samo jednu vrednost
+Sva polja sadrže pojedinačne vrednosti. Nema lista vrednosti u jednoj koloni i nema ponavljajućih grupa.
+
 - `full_name` je jedna tekstualna vrednost za puno ime korisnika
-- `role` je enum sa fiksnim vrednostima
-- Nema ponavljajućih grupa
+- `role` je ograničen na dve vrednosti: `user` i `employee`
+- svako iznajmljivanje je poseban red u tabeli `rentals`
 
 ### Drugi normalni oblik (2NF)
-✅ **Svi ne-ključni atributi su potpuno funkcionalni zavisni od primarnog ključa**
-- U tabeli USERS: svi atributi zavise samo od `id`
-- U tabeli BOOKS: svi atributi zavise samo od `id`
-- U tabeli RENTALS: svi atributi zavise samo od `id` (ne od kombinacije book_id + user_id)
+Sve tabele imaju jednostavan primarni ključ `id`, pa svi ostali atributi zavise od tog ključa.
+
+- u tabeli `users` podaci opisuju jednog korisnika
+- u tabeli `books` podaci opisuju jednu knjigu
+- u tabeli `rentals` podaci opisuju jedno iznajmljivanje
 
 ### Treći normalni oblik (3NF)
-✅ **Nema tranzitivnih zavisnosti**
-- U tabeli USERS: `role` ne zavisi od drugih ne-ključnih atributa
-- U tabeli BOOKS: `genre` ne zavisi od `author` ili `year`
-- U tabeli RENTALS: `late_fee` se računa na osnovu `due_date` i `return_date`, ne zavisi od drugih atributa
+Ne postoje atributi koji zavise od drugih neključnih atributa.
 
-### Zašto nema posebnih tabela za žanrove i autore?
-- **Žanrovi** su u ovom zadatku atribut knjige, jer je cilj jednostavan model sa obaveznim tabelama.
-- **Autori** su takođe atribut knjige; u većem sistemu mogli bi biti posebna tabela.
-- Za potrebe ovog zadatka, ovo je optimalno rešenje
+- uloga korisnika ne zavisi od imena ili email adrese
+- žanr, autor i godina su osobine knjige
+- zakasnina pripada konkretnom iznajmljivanju i računa se iz datuma vraćanja i roka
+
+### Napomena o autorima i žanrovima
+Autori i žanrovi nisu izdvojeni u posebne tabele zato što je aplikacija zamišljena kao jednostavan bibliotečki sistem. Za veći katalog bilo bi smisleno dodati tabele `authors` i `genres`, ali za ovaj obim tri glavne tabele pokrivaju tražene funkcije.
 
 ## 5. Indeksi
 
